@@ -255,6 +255,7 @@ namespace PTZRv2 {
     bool WriteHold(ushort startAdd, ushort[] data) {
       //./timer = new System.Threading.Timer(TimeOutCallBack,null,30000,Timeout.Infinite);
       try {
+
         gl.comm.master.WriteMultipleRegisters(cmn.slaveID, startAdd, data);
         this.cmn.status = DevStatus.None;
       } catch (TimeoutException to) {
